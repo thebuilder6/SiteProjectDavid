@@ -350,6 +350,18 @@ nav a.active {
   width: 1px;
   background: var(--ink);
 }
+.sim-rudder-bar .sim-end {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-style: normal;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+  line-height: 1;
+}
+.sim-rudder-bar .sim-port { left: 4px; }
+.sim-rudder-bar .sim-stbd { right: 4px; }
 
 /* rhumb lines overlay */
 .voyage-hero::after {

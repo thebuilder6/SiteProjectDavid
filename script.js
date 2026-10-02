@@ -113,7 +113,7 @@ console.log("Website loaded.");
       <div class="sim-hud" aria-hidden="true">
         <div class="sim-wind"><span class="sim-arrow">➤</span><span class="sim-wind-txt">10 kn</span></div>
         <div class="sim-row"><span class="sim-label">Boat</span><span class="sim-boat-txt">0.0 kn · In irons</span></div>
-        <div class="sim-row"><span class="sim-label">Rudder</span><span class="sim-bar"><i class="sim-rudder-fill"></i><b class="sim-center"></b></span></div>
+        <div class="sim-row"><span class="sim-label">Rudder</span><span class="sim-bar sim-rudder-bar"><i class="sim-rudder-fill"></i><b class="sim-center"></b><em class="sim-end sim-port">P</em><em class="sim-end sim-stbd">S</em></span></div>
         <div class="sim-row"><span class="sim-label">Sheet</span><span class="sim-bar"><i class="sim-sheet-fill"></i></span></div>
       </div>
       <canvas class="sail-sim" aria-label="Top-down sailing simulator. Move mouse sideways to steer, up and down to trim the mainsheet."></canvas>`;
@@ -292,7 +292,8 @@ console.log("Website loaded.");
       ctx2.fill(); ctx2.strokeStyle = "#163041"; ctx2.lineWidth = 1.8; ctx2.stroke();
       ctx2.beginPath(); ctx2.arc(0, mastY, 3, 0, Math.PI * 2); ctx2.fillStyle = "#b78f2e"; ctx2.fill();
       // rudder
-      const rudA = -boat.rudder * 0.6;
+      // rudder foil swings with the helm: trailing edge to the side of the turn
+      const rudA = boat.rudder * 0.6;
       ctx2.beginPath();
       ctx2.moveTo(0, L / 2 - 10);
       ctx2.lineTo(Math.sin(rudA) * 12, L / 2 - 10 + Math.cos(rudA) * 12);
